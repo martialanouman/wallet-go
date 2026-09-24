@@ -20,12 +20,12 @@ func main() {
 
 	help := `Usage: wallet <command> [<args>]
 The commands are:
-	help        	Show this help message
-	version     	Show the version of the wallet
-	withdraw    	Withdraw funds from the wallet
-	deposit     	Deposit funds into the wallet
-	balance     	Show the balance of the wallet
-	currencies    	Show the currencies list
+	help            Show this help message
+	version         Show the version of the wallet
+	withdraw        Withdraw funds from the wallet
+	deposit         Deposit funds into the wallet
+	balance         Show the balance of the wallet
+	currencies      Show the currencies list
 `
 
 	if cmd == "" {
