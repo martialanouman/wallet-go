@@ -3,3 +3,4 @@
 - Toujours relancer les vérifications avant de livrer
 - une sortie sur stdout est un contrat ;
 - la valeur « inconnue » ne doit jamais coïncider avec une valeur valide.
+- Makefile : tabulation obligatoire ; une ligne avec des espaces n'est pas une commande, sans erreur
