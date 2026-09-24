@@ -47,7 +47,7 @@ The commands are:
 		os.Exit(1)
 	}
 
-	fmt.Printf("unknown command: %s\n", cmd)
+	fmt.Fprintf(os.Stderr, "unknown command: %s\n", cmd)
 	fmt.Fprint(os.Stderr, help)
 	os.Exit(2)
 }

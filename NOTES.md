@@ -1,0 +1,2 @@
+- vérifier la longueur avant d'indexer ;
+- -X échoue en silence.
