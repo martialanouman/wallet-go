@@ -8,11 +8,11 @@ import (
 
 var (
 	version = "dev"
-	cmd     = ""
 )
 
 func main() {
 	args := os.Args
+	cmd := ""
 
 	if len(args) > 1 {
 		cmd = args[1]
@@ -28,7 +28,7 @@ The commands are:
 `
 
 	if cmd == "" {
-		fmt.Println(help)
+		fmt.Fprintln(os.Stderr, help)
 		os.Exit(2)
 	}
 
@@ -43,11 +43,11 @@ The commands are:
 	}
 
 	if slices.Contains([]string{"withdraw", "deposit", "balance"}, cmd) {
-		fmt.Printf("<%s>: not implemented\n", cmd)
+		fmt.Fprintf(os.Stderr, "%s: not implemented\n", cmd)
 		os.Exit(1)
 	}
 
 	fmt.Printf("unknown command: %s\n", cmd)
-	fmt.Println(help)
-	os.Exit(1)
+	fmt.Fprint(os.Stderr, help)
+	os.Exit(2)
 }
