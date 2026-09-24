@@ -27,8 +27,7 @@ func minorUnits(c Currency) int {
 	switch c {
 	case XOF:
 		return 0
-	case EUR:
-	case USD:
+	case EUR, USD:
 		return 2
 	default:
 		return -1
