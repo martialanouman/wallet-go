@@ -20,11 +20,12 @@ func main() {
 
 	help := `Usage: wallet <command> [<args>]
 The commands are:
-	help        Show this help message
-	version     Show the version of the wallet
-	withdraw    Withdraw funds from the wallet
-	deposit     Deposit funds into the wallet
-	balance     Show the balance of the wallet
+	help        	Show this help message
+	version     	Show the version of the wallet
+	withdraw    	Withdraw funds from the wallet
+	deposit     	Deposit funds into the wallet
+	balance     	Show the balance of the wallet
+	currencies    	Show the currencies list
 `
 
 	if cmd == "" {
@@ -39,6 +40,13 @@ The commands are:
 
 	if cmd == "version" {
 		fmt.Println("wallet " + version)
+		os.Exit(0)
+	}
+
+	if cmd == "currencies" {
+		for c := START + 1; c < END; c++ {
+			fmt.Printf("%s - %d\n", currencyCode(c), minorUnits(c))
+		}
 		os.Exit(0)
 	}
 
