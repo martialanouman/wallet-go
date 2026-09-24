@@ -3,5 +3,7 @@
 build:
 	go build -o bin/wallet ./cmd/cli
 
-check:
-	gofmt -l . && go vet ./... && $(MAKE) build && ./bin/wallet currencies
+check: build
+    @test -z "$$(gofmt -l .)" || (echo "non formatés :"; gofmt -l .; exit 1)
+	go vet ./...
+	./bin/wallet currencies
