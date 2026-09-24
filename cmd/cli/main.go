@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	Version = "dev"
+	version = "dev"
 	cmd     = ""
 )
 
@@ -24,6 +24,7 @@ The commands are:
 	version     Show the version of the wallet
 	withdraw    Withdraw funds from the wallet
 	deposit     Deposit funds into the wallet
+	balance     Show the balance of the wallet
 `
 
 	if cmd == "" {
@@ -37,16 +38,16 @@ The commands are:
 	}
 
 	if cmd == "version" {
-		fmt.Println("wallet " + Version)
+		fmt.Println("wallet " + version)
 		os.Exit(0)
 	}
 
-	if slices.Contains([]string{"withdraw", "deposit"}, cmd) {
+	if slices.Contains([]string{"withdraw", "deposit", "balance"}, cmd) {
 		fmt.Printf("<%s>: not implemented\n", cmd)
-		os.Exit(0)
+		os.Exit(1)
 	}
 
 	fmt.Printf("unknown command: %s\n", cmd)
-	os.Exit(2)
-
+	fmt.Println(help)
+	os.Exit(1)
 }
