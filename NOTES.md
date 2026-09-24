@@ -1,2 +1,3 @@
 - vérifier la longueur avant d'indexer ;
 - -X échoue en silence.
+- Toujours relancer les vérifications avant de livrer
