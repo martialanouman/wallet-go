@@ -3,11 +3,11 @@ package main
 type Currency int
 
 const (
-	START Currency = iota
+	currencyUnknown Currency = iota
 	XOF
 	EUR
 	USD
-	END
+	currencyEnd
 )
 
 func currencyCode(c Currency) string {
@@ -28,10 +28,9 @@ func minorUnits(c Currency) int {
 	case XOF:
 		return 0
 	case EUR:
-		return 2
 	case USD:
 		return 2
 	default:
-		return 0
+		return -1
 	}
 }

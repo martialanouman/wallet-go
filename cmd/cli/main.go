@@ -44,7 +44,7 @@ The commands are:
 	}
 
 	if cmd == "currencies" {
-		for c := START + 1; c < END; c++ {
+		for c := currencyUnknown + 1; c < currencyEnd; c++ {
 			fmt.Printf("%s - %d\n", currencyCode(c), minorUnits(c))
 		}
 		os.Exit(0)

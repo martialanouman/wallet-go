@@ -1,3 +1,5 @@
 - vérifier la longueur avant d'indexer ;
 - -X échoue en silence.
 - Toujours relancer les vérifications avant de livrer
+- une sortie sur stdout est un contrat ;
+- la valeur « inconnue » ne doit jamais coïncider avec une valeur valide.
