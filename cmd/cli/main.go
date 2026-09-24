@@ -8,12 +8,15 @@ import (
 
 var (
 	Version = "dev"
+	cmd     = ""
 )
 
 func main() {
+	args := os.Args
 
-	args := os.Args[1:]
-	cmd := args[0]
+	if len(args) > 1 {
+		cmd = args[1]
+	}
 
 	help := `Usage: wallet <command> [<args>]
 The commands are:
@@ -23,7 +26,7 @@ The commands are:
 	deposit     Deposit funds into the wallet
 `
 
-	if len(args) == 0 {
+	if cmd == "" {
 		fmt.Println(help)
 		os.Exit(2)
 	}
